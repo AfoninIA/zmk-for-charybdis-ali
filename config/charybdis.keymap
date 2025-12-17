@@ -87,6 +87,39 @@
                 <&macro_wait_time 30>,
                 <&rgb_ug RGB_COLOR_HSB(250,100,50)>;
         };
+
+        par_left: par_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PAR_LEFT";
+        };
+
+        d_brc_ru: bracket_left_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&en LBRC &en RBRC &kp LEFT>;
+            label = "BRACKET_LEFT_RU";
+        };
+
+        d_brc: d_brc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&double_en LBRC RBRC &kp LEFT>;
+            label = "D_BRC";
+        };
+
+        double_en: double_en {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings =
+                <&to_en &macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_wait_time 10>,
+                <&to_ru>,
+                <&macro_wait_time 10>;
+
+            label = "DOUBLE_EN";
+        };
     };
 
     keymap {
