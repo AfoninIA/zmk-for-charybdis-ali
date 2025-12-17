@@ -61,6 +61,20 @@
             #binding-cells = <0>;
             bindings = <&en LBRC>, <&d_brc_ru>;
         };
+
+        hml_mouse: hml_mouse {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML_MOUSE";
+            bindings = <&kp>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <6>;
+            hold-trigger-on-release;
+        };
     };
 
     combos {
