@@ -40,6 +40,27 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <0 13 12 24 25 0 1 12 13 14 24 25 26 0 1 2 3 4 5 12 13 14 15 16 17 28 29 37 38 27 36>;
         };
+
+        par_td: par_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "(";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&par_left>;
+        };
+
+        brace_td: brace_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACE_TD";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC>, <&d_brc>;
+        };
+
+        brace_td_ru: brace_td_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACE_TD_RU";
+            #binding-cells = <0>;
+            bindings = <&en LBRC>, <&d_brc_ru>;
+        };
     };
 
     macros {
