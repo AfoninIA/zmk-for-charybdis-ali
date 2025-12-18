@@ -307,3 +307,10 @@
         };
     };
 };
+
+&trackball_listener {
+    input-processors =
+        <&zip_auto_mouse 6 500>,
+        <&zip_x_scaler 18 20>,
+        <&zip_y_scaler 15 20>;
+};
